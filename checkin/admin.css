@@ -1,0 +1,28 @@
+
+.body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-color: #27b646;
+    font-family: Arial, sans-serif;
+}
+.container header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.sidebar{
+    background-color: #409764;
+    color: #fff;
+    display: flex;
+    
+}
+.sidebar li{
+    margin-bottom: 20px;
+}
+

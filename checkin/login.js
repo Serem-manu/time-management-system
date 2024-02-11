@@ -41,4 +41,6 @@ function checkOut() {
     } else {
         alert('Check-Out not allowed at this time.');
     }
-}
+    
+    }
+

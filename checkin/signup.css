@@ -8,7 +8,7 @@ body {
         margin: 0;
     }
     
-    .login-container, .time-management-container , .signup-container{
+    .signup-container{
         text-align: center;
         padding: 20px;
     /*     border: 1px solid #ccc; */

@@ -1,4 +1,4 @@
-// In a real-world scenario, use proper authentication and store passwords securely.
+
 const employeeData = [
     { id: 'D205', password: 'passD205' },
     { id: 'D309', password: 'passD309' }
@@ -16,7 +16,6 @@ function login() {
     if (employee) {
         document.getElementById('timeManagementContainer').style.display = 'block';
     } else if (isAdmin) {
-        // Add code to redirect to admin dashboard or display admin features
         alert('Admin login successful!');
     } else {
         alert('Invalid credentials. Please try again.');

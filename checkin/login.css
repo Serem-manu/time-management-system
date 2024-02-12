@@ -1,5 +1,5 @@
 body {
-    /*   background-color:; */
+      background-color:rgb(64, 196, 230);
         font-family: 'Arial', sans-serif;
         display: flex;
         justify-content: center;
@@ -17,7 +17,7 @@ body {
         background-color:#00FF00;
         display: flex;
       flex-direction:column;
-      background-color:rgb(255, 255, 255);
+      background-color:rgb(80, 107, 228);
     /*     border: 1px solid black; */
     }
     

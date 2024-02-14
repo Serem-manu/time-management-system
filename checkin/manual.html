@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="manual.css">
+    <title>Manual Register</title>
+</head>
+<body>
+
+<div class="manual-register">
+    <h2>Employee Manual Register (Admin)</h2>
+
+    <label for="employeeId">Employee ID:</label>
+    <input type="text" id="employeeId" placeholder="Enter Employee ID">
+
+    <button onclick="checkIn()">Check-In</button>
+    <button onclick="checkOut()">Check-Out</button>
+
+    <div id="registerLogs">
+        <h3>Register Logs</h3>
+        <ul id="logsList"></ul>
+    </div>
+</div>
+
+<script src="manual.js"></script>
+</body>
+</html>

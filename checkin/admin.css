@@ -6,7 +6,7 @@
 }
 
 .container{
-    background-color: #27b646;
+    background-color: rgb(80, 107, 228);
     font-family: Arial, sans-serif;
 }
 .container header {
@@ -18,9 +18,10 @@
 }
 
 .sidebar{
-    background-color: #409764;
+    background-color:rgb(80, 107, 228);
     color: #fff;
     display: flex;
+    
     
 }
 sidebar li{

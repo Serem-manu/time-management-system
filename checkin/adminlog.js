@@ -7,7 +7,7 @@ function adminLogin() {
     const adminPassword = document.getElementById('adminPassword').value;
 
     if (adminCredentials.id === adminId && adminCredentials.password === adminPassword) {
-        window.location.href = 'admin-dashboard.html';
+        window.location.href = 'admin.html';
     } else {
         alert('Invalid admin credentials. Please try again.');
     }

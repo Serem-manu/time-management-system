@@ -3,7 +3,7 @@ const employeeData = [
     { id: 'D309', password: 'passD309' }
 ];
 
-const adminCredentials = { id: 'admin', password: 'admin123' };
+const adminCredentials = { id: 'admin', password: 'admin123' }; // Add admin credentials
 let isLoggedIn = false;
 
 function login() {
@@ -15,7 +15,7 @@ function login() {
 
     if (employee) {
         isLoggedIn = true;
-        updateVisibility();
+        redirectToLoggedInPage();
     } else if (isAdmin) {
         alert('Admin login successful!');
     } else {
@@ -23,22 +23,10 @@ function login() {
     }
 }
 
-function logout() {
-    isLoggedIn = false;
-    updateVisibility();
-}
-
-function updateVisibility() {
-    const loginContainer = document.getElementById('loginContainer');
-    const timeManagementContainer = document.getElementById('timeManagementContainer');
-
-    if (isLoggedIn) {
-        loginContainer.style.display = 'none';
-        timeManagementContainer.style.display = 'block';
-    } else {
-        loginContainer.style.display = 'block';
-        timeManagementContainer.style.display = 'none';
-    }
+function redirectToLoggedInPage() {
+    //to  Redirect to the login.html  while working 
+    // replace below href link with  './checkin/login.html'
+    window.location.href = 'https://serem-manu.github.io/time-management-system/checkin/login.html';
 }
 
 function checkIn() {

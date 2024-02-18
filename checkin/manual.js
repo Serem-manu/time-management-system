@@ -1,7 +1,7 @@
 const employeeData = [
-    { id: 'E001', name: 'John Doe', checkedIn: false },
-    { id: 'E002', name: 'Jane Smith', checkedIn: false },
-     { id: 'D205', name: 'Testing', checkedIn: false },
+    { id: 'E001', name: 'John Doe', checkedIn: false, checkInTime: null },
+    { id: 'E002', name: 'Jane Smith', checkedIn: false, checkInTime: null },
+    { id: 'D205', name: 'Testing', checkedIn: false, checkInTime: null },
 ];
 
 function checkIn() {
@@ -11,7 +11,8 @@ function checkIn() {
     if (employee) {
         if (!employee.checkedIn) {
             employee.checkedIn = true;
-            logAction(`${employee.name} (ID: ${employee.id}) checked in.`);
+            employee.checkInTime = new Date();
+            logAction(`${employee.name} (ID: ${employee.id}) checked in at ${getCurrentTime()}.`);
         } else {
             logAction(`${employee.name} (ID: ${employee.id}) is already checked in.`);
         }
@@ -26,8 +27,12 @@ function checkOut() {
 
     if (employee) {
         if (employee.checkedIn) {
+            const checkInTime = employee.checkInTime;
+            const checkOutTime = new Date();
+            const duration = calculateDuration(checkInTime, checkOutTime);
             employee.checkedIn = false;
-            logAction(`${employee.name} (ID: ${employee.id}) checked out.`);
+            employee.checkInTime = null;
+            logAction(`${employee.name} (ID: ${employee.id}) checked out at ${getCurrentTime()}. Total duration: ${duration}.`);
         } else {
             logAction(`${employee.name} (ID: ${employee.id}) is not checked in.`);
         }
@@ -45,4 +50,20 @@ function logAction(message) {
     const logItem = document.createElement('li');
     logItem.textContent = message;
     logsList.appendChild(logItem);
+}
+
+function getCurrentTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    return `${hours}:${minutes}:${seconds}`;
+}
+
+function calculateDuration(startTime, endTime) {
+    const duration = endTime.getTime() - startTime.getTime();
+    const hours = Math.floor(duration / (1000 * 60 * 60));
+    const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((duration % (1000 * 60)) / 1000);
+    return `${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 }

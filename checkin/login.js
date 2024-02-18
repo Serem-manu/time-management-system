@@ -1,10 +1,10 @@
-
 const employeeData = [
     { id: 'D205', password: 'passD205' },
     { id: 'D309', password: 'passD309' }
 ];
 
-const adminCredentials = { id: 'admin', password: 'admin123' }; // Add admin credentials
+const adminCredentials = { id: 'admin', password: 'admin123' };
+let isLoggedIn = false;
 
 function login() {
     const employeeId = document.getElementById('employeeId').value;
@@ -14,11 +14,30 @@ function login() {
     const isAdmin = adminCredentials.id === employeeId && adminCredentials.password === password;
 
     if (employee) {
-        document.getElementById('timeManagementContainer').style.display = 'block';
+        isLoggedIn = true;
+        updateVisibility();
     } else if (isAdmin) {
         alert('Admin login successful!');
     } else {
         alert('Invalid credentials. Please try again.');
+    }
+}
+
+function logout() {
+    isLoggedIn = false;
+    updateVisibility();
+}
+
+function updateVisibility() {
+    const loginContainer = document.getElementById('loginContainer');
+    const timeManagementContainer = document.getElementById('timeManagementContainer');
+
+    if (isLoggedIn) {
+        loginContainer.style.display = 'none';
+        timeManagementContainer.style.display = 'block';
+    } else {
+        loginContainer.style.display = 'block';
+        timeManagementContainer.style.display = 'none';
     }
 }
 
@@ -40,6 +59,4 @@ function checkOut() {
     } else {
         alert('Check-Out not allowed at this time.');
     }
-    
-    }
-
+}

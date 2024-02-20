@@ -1,6 +1,6 @@
 const employeeData = [
-    { id: 'D205', password: 'passD205' },
-    { id: 'D309', password: 'passD309' }
+    { id: 'E001', password: 'passE001' },
+    { id: 'E002', password: 'passE002' }
 ];
 
 const adminCredentials = { id: 'admin', password: 'admin123' }; // Add admin credentials
@@ -46,3 +46,11 @@ function checkOut() {
         alert('Check-Out not allowed at this time.');
     }
 }
+function myFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }

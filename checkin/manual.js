@@ -1,7 +1,6 @@
 const employeeData = [
-    { id: 'E001', name: 'John Doe', checkedIn: false, checkInTime: null },
-    { id: 'E002', name: 'Jane Smith', checkedIn: false, checkInTime: null },
-    { id: 'D205', name: 'Testing', checkedIn: false, checkInTime: null },
+    { id: 'E001', name: 'Sam', checkedIn: false, checkInTime: null },
+    { id: 'E002', name: 'Dan', checkedIn: false, checkInTime: null },
 ];
 
 function checkIn() {

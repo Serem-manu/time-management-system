@@ -24,9 +24,7 @@ function login() {
 }
 
 function redirectToLoggedInPage() {
-    //to  Redirect to the login.html  while working 
-    // replace below href link with  './checkin/login.html'
-    window.location.href = 'https://serem-manu.github.io/time-management-system/checkin/login.html';
+    window.location.href = './checkin/login.html';
 }
 
 function checkIn() {

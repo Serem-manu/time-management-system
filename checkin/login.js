@@ -24,7 +24,10 @@ function login() {
 }
 
 function redirectToLoggedInPage() {
+    const employeeId = document.getElementById('employeeId').value;
+    alert("welcome "+ employeeId)
     window.location.href = './checkin/login.html';
+    
 }
 
 function checkIn() {
@@ -45,6 +48,17 @@ function checkOut() {
     } else {
         alert('Check-Out not allowed at this time.');
     }
+    function redirectToLoggedInPage() {
+        document.getElementById('timeManagementContainer').style.display = 'block';
+        if (!hasCheckedIn) {
+            document.getElementById('checkInBtn').disabled = false;
+            document.getElementById('checkOutBtn').disabled = true;
+        } else {
+            document.getElementById('checkInBtn').disabled = true;
+            document.getElementById('checkOutBtn').disabled = false;
+        }
+    }
+    
 }
 function myFunction() {
     var x = document.getElementById("password");

@@ -66,3 +66,13 @@ function calculateDuration(startTime, endTime) {
     const seconds = Math.floor((duration % (1000 * 60)) / 1000);
     return `${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 }
+function generateUserLogs() {
+    const logsList = document.getElementById('logsList');
+
+    employeeData.forEach(employee => {
+        logsList.innerHTML += `<li>${employee.name} (${employee.id}) - Checked In: ${employee.checkedIn ? 'Yes' : 'No'}</li>`;
+    });
+}
+
+// Call the function to generate user logs when the page loads
+generateUserLogs();

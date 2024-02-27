@@ -3,10 +3,7 @@ const employees = [
     { id: 'E002', password: 'passE002' }
 ];
 
-    // This is a placeholder function for loading employee data.
-    // You should replace this with your actual data fetching logic.
-    // For simplicity, I'm using hardcoded data here.
-
+   
     const data = [
         { id: 1, loginTime: '2024-02-21 09:00:00', logoutTime: '2024-02-21 17:00:00' },
         { id: 2, loginTime: '2024-02-21 10:00:00', logoutTime: '2024-02-21 18:30:00' },
@@ -14,11 +11,8 @@ const employees = [
     ];
 
     const table = document.getElementById('employeeTable');
-
-    // Clear existing rows
     table.innerHTML = "<tr><th>Employee ID</th><th>Login Time</th><th>Logout Time</th><th>Hours Worked</th></tr>";
 
-    // Populate the table with data
     data.forEach(employee => {
         const loginTime = new Date(employee.loginTime);
         const logoutTime = new Date(employee.logoutTime);
@@ -35,4 +29,3 @@ const employees = [
         cell3.textContent = employee.logoutTime;
         cell4.textContent = hoursWorked;
     });
-

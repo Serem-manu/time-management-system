@@ -29,17 +29,32 @@ function redirectToLoggedInPage() {
     window.location.href = './checkin/login.html';
     
 }
-
+function muteCheckin() {
+    document.getElementById("checkIn").disabled = true;
+    
+     setTimeout(function() {
+      document.getElementById("checkIn").disabled = false;
+    }, 24 * 60 * 60 * 1000); 
+  }
 function checkIn() {
     const currentTime = new Date().getHours();
 
     if (currentTime < 8 || (currentTime >= 8 && currentTime < 8.5)) {
         alert('Check-In successful!');
-    } else {
+    } 
+    else {
         alert('Check-In not allowed at this time.');
     }
+    muteCheckin()
 }
-
+function muteCheckout() {
+    document.getElementById("checkIn").disabled = true;
+    
+     setTimeout(function() {
+      document.getElementById("checkIn").disabled = false;
+    }, 24 * 60 * 60 * 1000); 
+    muteCheckout(g)
+  }
 function checkOut() {
     const currentTime = new Date().getHours();
 

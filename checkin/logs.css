@@ -8,7 +8,7 @@ table {
     margin-top: 20px;
 }
 table, th, td {
-    border: 1px solid #3719bd;
+    border: 1px solid #ffffff;
     /* background-color: #3719bd; */
 }
 th, td {
@@ -16,7 +16,7 @@ th, td {
     text-align: left;
 }
 th {
-    background-color: #3719bd;
+    background-color: #eeeeee;
 }
 button {
     padding: 10px;
